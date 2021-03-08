@@ -27,9 +27,9 @@ class TweetController extends Controller
     public function store(Request $request)
     {
         $attribute = $request->validate([
-            'message' => 'required|string|max:140|min:10',
-            'avatar_picture' => 'image|mimes:jpeg,png,jpg,gif|max:2048'
-        ]);
+            'message' => 'required|string|max:140',
+            'img_path' => 'image|mimes:jpeg,png,jpg,gif|max:15360'
+        ], ['required' => 'Ton tweet ne peut pas être vide']);
 
         $tweet = Tweet::create([
             'message' => $attribute['message'],
@@ -38,7 +38,8 @@ class TweetController extends Controller
 
         if (request()->hasFile('img_path')) {
             $attribute['img_path'] = request('img_path')->store('images');
-            Image::make('storage/' . $attribute['img_path'])->encode('jpg', 100)->save();
+            // TODO: Adding custom encode for GIF
+            // Image::make('storage/' . $attribute['img_path'])->encode('', 100)->save();
             TweetsImage::create([
                 'tweet_id' => $tweet->id,
                 'img_path' => $attribute['img_path']
