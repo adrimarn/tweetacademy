@@ -5,7 +5,7 @@
                 <textarea id="tweet-textarea" rows="2" placeholder="Quoi de neuf ?"
                           name="message"></textarea>
         </div>
-        <button class="ui right floated twitter button" type="submit">Tweeter</button>
+        <button class="ui right floated twitter button" id="send-tweet" type="submit">Tweeter</button>
         <div class="ui small basic icon buttons">
             <label for="tweet_picture" class="ui button picture-btn"><i class="file image icon"></i></label>
         </div>
@@ -39,7 +39,7 @@
     $(document).ready(function () {
         //const $text = $('text[type="text"]');
         const $textarea = $('#tweet-textarea');
-        const $submit = $('button[type="submit"]');
+        const $submit = $('#send-tweet');
 
         // Set the onkeyup events
         $submit.prop('disabled', true);
