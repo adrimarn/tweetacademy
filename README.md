@@ -1,6 +1,9 @@
 # W1 - PHP : Tweet Academy
 Student project for [W@C by Epitech](https://www.webacademie.org/). Promo 2022 Strasbourg
 
+## Screenshot
+<img src="https://github.com/adrimarn/tweetacademy/assets/74007878/93ff5719-6cf5-48c2-89b1-0b0ae604407e" width="400" />
+
 ## Install
 
 Close this repos
